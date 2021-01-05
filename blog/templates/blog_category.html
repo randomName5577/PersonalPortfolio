@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {{ category }} Blogs
+{% endblock %}
+{% block content %}
+    <h1>{{ category | title }}</h1>
+    <hr>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                <div class="card mb-2">
+                    <img class="card-img-top homepage_image" src=" {% static  post.get_photo_url %}">
+                    <div class="card-body">
+                        <small>
+                            <p class="date_created"> {{ post.created_on.date }}</p>
+                        </small>
+                        <h5 class="card-title"><a href="{% url 'blog:blog_detail' post.pk %}">{{ post.title }}</a></h5>
+                        <p class="card-text">{{ post.body |safe| slice:"300" }}...</p>
+                        <small>
+                            Categories:&nbsp;
+                            {% for category in post.categories.all %}
+                                <a href="{% url 'blog:blog_category' category.name %}">
+                                    {{ category.name }}
+                                </a>&nbsp;
+                            {% endfor %}
+                        </small>
+                        <div>
+                            <a href="{% url 'blog:blog_detail' post.pk %}"
+                               class="btn btn-primary ">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

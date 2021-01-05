@@ -1,0 +1,142 @@
+/* Make sure that padding behaves as expected */
+* {
+    box-sizing: border-box
+}
+
+/* Container for skill bars */
+.container {
+    width: 100%; /* Full width */
+    background-color: #ddd; /* Grey background */
+}
+
+.skills {
+    text-align: right; /* Right-align text */
+    padding-top: 0px; /* Add top padding */
+    padding-bottom: 5px; /* Add bottom padding */
+    color: Red; /* White text color */
+    font-size: 0.5em;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.skills_text {
+    font-size: 0.8em;
+}
+
+/*.html {*/
+/*    width: 90%;*/
+/*    background-color: #4CAF50;*/
+/*}*/
+
+/*!* Green *!*/
+/*.css {*/
+/*    width: 80%;*/
+/*    background-color: blue;*/
+/*}*/
+
+/*!* Blue *!*/
+/*!*.css {width: 80%; background-color: green;}*!*/
+/*.js {*/
+/*    width: 65%;*/
+/*    background-color: red;*/
+/*}*/
+
+/*!* Red *!*/
+/*.php {*/
+/*    width: 60%;*/
+/*    background-color: slateblue;*/
+/*}*/
+
+.five {
+    width: 100%;
+    background-color: red;
+}
+
+.four {
+    width: 80%;
+    background-color: orange;
+}
+
+.three {
+    width: 60%;
+    background-color: yellow;
+}
+
+.date_created {
+    font-size: 0.8em;
+}
+
+
+body {
+    position: relative;
+}
+
+/*.navbar-fixed-left {*/
+/*    max-width: 20%;*/
+/*    position: fixed !important;*/
+/*    top: 20%;*/
+/*    left: 0px;*/
+/*    height: 100%;*/
+/*    -webkit-transform: translate3d(0, 0, 0) !important;*/
+/*    transform: none !important;*/
+/*    -webkit-backface-visibility: hidden;*/
+/*    background: rgba(255, 255, 255, 0.5);*/
+
+/*}*/
+
+@media (min-width: 768px) {
+    .navbar-fixed-left {
+    position: fixed;
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    width: 220px;
+}
+}
+
+@media (min-width: 991px) {
+    .main-content {
+        padding-right: 220px;
+        padding-left: 220px;
+    }
+}
+
+
+h3:before{
+    display: block;
+    content: " ";
+    margin-top: -55px;
+    height: 50px;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.left{
+    text-align: left;
+}
+.middle{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.homepage_image{
+    height: 400px;
+    width: 400px;
+}
+
+.miniLogo{
+    width:40px;
+    height:40px;
+}
+.main-content{
+    width: 100%;
+}
+.card{
+    min-width: 800px;
+}

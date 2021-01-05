@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Search
+{% endblock %}
+{% block content %}
+    <div class="row">
+            {% for result in all_search_results %}
+                <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                    <div class="card mb-2">
+                        <img class="card-img-top homepage_image" src="{% static result.get_photo_url %}">
+                        <div class="card-body">
+                            <h5 class="card-title"><a
+                                    href="{% url 'project:project_detail' result.pk %}">{{ result.title }}</a></h5>
+                            <p class="card-text">{{ result.body |safe| slice:'300' }}...</p>
+                            <a href="{% url 'project:project_detail' result.pk %}"
+                               class="btn btn-primary ">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <h2>No results found</h2>
+            {% endfor %}
+    </div>
+
+{% endblock %}
+

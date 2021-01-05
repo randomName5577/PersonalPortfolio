@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block content %}
+
+    <h1>Projects</h1>
+
+    <p>Can't find what you are looking for? Try sorting by category</p>
+    <div class="row">
+        <div class="col-lg-8">
+            {% for technology in technologies %}
+                <a href="{% url 'project:projects_sorted' technology %}" class="btn btn-primary btn-sm">
+                    {{ technology }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+
+        {% for project in projects %}
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+                <div class="card mb-2">
+                    <img class="card-img-top homepage_image" src="{% static project.get_photo_url %}">
+                    <div class="card-body">
+                        <h5 class="card-title"><a
+                                href="{% url 'project:project_detail' project.pk %}">{{ project.title }}</a></h5>
+                        <p class="card-text">{{ project.body |safe| slice:'300' }}..</p>
+                        <a href="{% url 'project:project_detail' project.pk %}"
+                           class="btn btn-primary ">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

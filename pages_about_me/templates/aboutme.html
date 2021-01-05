@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    About Me
+{% endblock %}
+
+{% block left_side %}
+    <nav id="myscrollspy" class="navbar nav-sidebar navbar-light">
+        <a class="navbar-brand">Quick Links</a>
+        <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#resume">Resume</a>
+            {#      #}
+            {#    <nav class="nav nav-pills flex-column">#}
+            {#      <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>#}
+            {#      <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>#}
+            {#    </nav>#}
+            <a class="nav-link" href="#education">Educations</a>
+            <a class="nav-link" href="#work-experiences">Work Experiences</a>
+            <a class="nav-link" href="#publications-major-projects">Publications/Major School Projects</a>
+            <a class="nav-link" href="#skills">Skills Visualized</a>
+            <a class="nav-link" href="#coding-certs">Coding Certifications</a>
+        </nav>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Jayson El-Turk</h1>
+    <br>
+    <h3>Brief Summary</h3>
+    <p>Fast learning Field Service Engineer looking for a position in the software development industry that will
+        utilize my strong creativity and problem-solving skills as well as strengthen my professional abilities. An
+        extremely
+        hardworking individual that can see projects to their end. Self-reliant, being able to learn quickly and
+        independently, but also work well collaborating with a team. Looking to join a progressive company that will
+        allow me to apply
+        my knowledge and abilities for a mutually rewarding job relationship. </p>
+
+    <p></p>
+    <h3 id="resume">Resume</h3>
+    <p>You can find my resume by clicking <a target='_blank'
+                                             href="{% static 'files/Jayson El-Turk.pdf' %}">here<span><img
+                class="miniLogo"
+                src="{% static 'images/pdflogo.png' %}"
+                alt=""></span></a></p>
+    <h3 class="section-head" id="education">Education:</h3>
+    <p>Graduated from Texas A&M with a Mechanical Engineering Degree in 2017. Gig'em!</p>
+    <img class="rounded mx-auto d-block" width=200 height="170" src="{% static 'images/aggies.png' %}" alt="">
+
+    <p></p>
+    <h3 id="work-experiences">Work Experiences:</h3>
+    <h5>Field Service Engineer at <a href="https://www.screen-spe.com/us/index.php">SCREEN SPE</a></h5>
+    <em>2017 - Present</em>
+    <ul>
+        <li>Executed installations, repairs and necessary changes to company equipment by following equipment solution
+            protocols
+        </li>
+        <li>Demonstrated the capacity to develop and implement all aspects of software solutions and strategies,
+            resulting in
+            improved/simplified workflows
+        </li>
+        <li>Revitalized equipment management processes by writing software that analyzes millions of equipment event
+            logs, reducing the process from hours to minutes
+        </li>
+        <li>
+            Programmed an application that maintained records of employee certifications, notified changes, and alerted
+            employees on when to re-certify
+        </li>
+        <li>Created multiple scripts that help extract data from equipment logs—accelerating data mining efforts from
+            the
+            previous 3 hours to 30 seconds
+        </li>
+        <li>Exemplified strong software programming and development acumen and working knowledge of programming
+            languages and programs
+        </li>
+    </ul>
+    <h5>Quality Test Technician at <a href="https://www.plugpower.com/">Plug Power</a></h5>
+    <em>2017</em>
+    <ul>
+        <li>Analyzed Hydrogen Fuel Cells requirements and qualifications to develop strategies and plans for quality
+            system
+            testing and evaluations
+        </li>
+        <li>Coordinated and performed routine inspections and repairs for both the mechanical and electrical aspect of
+            Hydrogen Fuel Cells
+        </li>
+        <li>Developed the knowledge and skill to use testing equipment, read and interpret test results, streamline test
+            procedures, and generate reports based on data
+        </li>
+        <li>
+            Possessed strong interpersonal skills resulting in outstanding communication, team-work, flexibility, and
+            cohesiveness with coworkers
+        </li>
+    </ul>
+    <br>
+    <h3 id="publications-major-projects">Publications/Major School Projects:</h3>
+    <ul>
+        <li><h6><a
+                href="https://www.sae.org/publications/technical-papers/content/2016-01-1262/?_ga=2.241708162.1466979876.1608960016-370965537.1608960015">GTL
+            Diesel vs Traditional Diesel</a></h6>
+            <p>We designed an experiment to test how good GTL diesel is compared to traditional diesel in terms of
+                emissions and performance. All experiments were run using a single cylinder engine attached to a
+                dynamometer.
+                Our research paper concluding our results was published in the SAE Journal and presented in the
+                conference in Detroit.</p></li>
+        <li>
+            <h6><a href="http://tamuqshelleco.weebly.com/">Shell Eco-Marathon</a></h6>
+            <p>We built a car to complete in the Shell Eco-Marathon. The Shell Eco-Marathon is an international
+                competition to see which student engineering team can design, build and operate the most
+                energy-efficient vehicle.
+                Since we were the only GTL diesel car, I consider us winners in our category when in reality we were no
+                match for the electric powered cars.</p>
+            <img class="rounded mx-auto d-block" width="600" height="400" src="{% static 'images/meInCarEdit.jpg' %}"
+                 alt="">
+        </li>
+    </ul>
+    <br>
+    <h3 id="skills">My Skills Visualized:</h3>
+    <br>
+    <div class="text-center mx-auto">
+        <div class="row">
+            <p class="col-sm-4">Red - Intermediate Skill Level</p>
+            <p class="col-sm-4">Blue - Advanced Skill Level</p>
+            <p class="col-sm-4">Green - Expert Skill Level</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for skill,score in skills.items %}
+            <div class="col-lg-4">
+                <p>{{ skill }}</p>
+                <div class="container">
+                    <div class="{{ score }} skills"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <style>
+        .five {
+            width: 100%;
+            background-color: green;
+        }
+
+        .four {
+            width: 80%;
+            background-color: blue;
+        }
+
+        .three {
+            width: 60%;
+            background-color: red;
+        }
+    </style>
+    <p></p>
+    <br>
+    <h3 id="coding-certs">Coding Certifications:</h3>
+    <ul>
+        <li>2020 Complete Python Bootcamp From Zero to Hero - Jose Portilla</li>
+        <li>Automate the Boring Stuff with Python Programming - Al Sweigart</li>
+        <li>Python for Data Science and Machine Learning Bootcamp - Jose Portilla</li>
+        <li>Python and Django Full Stack Web Developer Bootcamp - Jose Portilla</li>
+        <li>The Complete SQL Bootcamp 2020: Go from Zero to Hero - Jose Portilla</li>
+        <li>Git & GitHub: Ultimate and Practical Guide for Beginners! - Vlad Budnitski</li>
+    </ul>
+{% endblock %}
