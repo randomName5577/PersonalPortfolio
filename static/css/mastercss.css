@@ -142,3 +142,8 @@ h3:before{
 .card{
     min-width: 800px;
 }
+
+.article_image{
+    max-height: 800px;
+    max-width: 30%;
+}
