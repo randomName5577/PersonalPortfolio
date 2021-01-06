@@ -18,6 +18,7 @@ class Post(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField('Category', related_name='posts')
     abs_image = models.FilePathField(path='/home/jaysonturk/PersonalPortfolio/blog/static/images')
+    #abs_image = models.FilePathField(path='/home/homepc/PycharmProjects/djangoProject/blog/static/images')
 
     @property
     def get_photo_url(self):

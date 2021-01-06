@@ -15,6 +15,7 @@ class Project(models.Model):
     body = RichTextField(blank=True, null=True)
     technology = models.ManyToManyField('Technology',related_name='categories')
     image = models.FilePathField(path="/home/jaysonturk/PersonalPortfolio/projects/static/images")
+    #image = models.FilePathField(path='/home/homepc/PycharmProjects/djangoProject/projects/static/images')
     github_link = models.CharField(max_length=255,blank=True)
 
     def __str__(self):
