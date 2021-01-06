@@ -126,8 +126,10 @@ h3:before{
     text-align: right;
 }
 .homepage_image{
-    height: 400px;
-    width: 400px;
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+    /*width: 400px;*/
 }
 
 .miniLogo{

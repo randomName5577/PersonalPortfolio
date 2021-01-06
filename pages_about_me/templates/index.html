@@ -26,7 +26,7 @@
             <h3>Project:</h3>
             {% for project in projects %}
                 <div class="card mb-2">
-                    <img class="img-fluid img-thumbnail" src="{% static project.get_photo_url %}">
+                    <img class="img-fluid homepage_image mx-auto" src="{% static project.get_photo_url %}">
                     <div class="card-body">
                         <h4 class="card-title"><a
                                 href="{% url 'project:project_detail' project.pk %}">{{ project.title }}</a></h4>
@@ -34,12 +34,13 @@
                     </div>
                 </div>
             {% endfor %}
+        <a href="{% url 'project:project_index' %}" class="btn btn-primary btn-lg">All Projects</a>
         </div>
         <div class="col-lg-6 col-md-12 col-sm-12">
             <h3>Blog:</h3>
             {% for blog in blogs %}
                 <div class="card mb-2">
-                    <img class="img-fluid img-thumbnail" src="{% static blog.get_photo_url %}">
+                    <img class="img-fluid homepage_image mx-auto" src="{% static blog.get_photo_url %}">
                     <div class="card-body">
                         <h4 class="card-title"><a
                                 href="{% url 'blog:blog_detail' blog.pk %}">{{ blog.title }}</a></h4>
@@ -48,17 +49,8 @@
                 </div>
 
             {% endfor %}
-        </div>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-        <a href="{% url 'project:project_index' %}" class="btn btn-primary btn-lg">All Projects</a>
-    </div>
-
-    <div class="col-lg-6 col-md-12 col-sm-12">
         <a href="{% url 'blog:blog_index' %}" class="btn btn-primary btn-lg">All Blogs</a>
-    </div>
-
-    </div>
-
+        </div>
     <br>
     <h2>Find me on Github:</h2>
     <p><a href="https://github.com/randomName5577"><img class="miniLogo" src="{% static 'images/github_logo.png' %}"
